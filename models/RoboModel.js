@@ -5,6 +5,7 @@ var roboSchema = mongoose.Schema({
    price: Number,
    date: Date,
    image: String,
+   category: String,
    model: String,
    hot: String,
 });

@@ -5,6 +5,7 @@ var LegoSchema = mongoose.Schema({
    date: Date,
    image: String,
    price:Number,
+   category: String,
    model: String,
    hot: String,
 });
