@@ -26,7 +26,7 @@ router.get('/detail/:id', async (req, res) => {
   }
   res.render('detail', { products: products});
 });
-router.get('/detail/order/:id', async (req, res) => {
+router.post('/detail/order/:id', async (req, res) => {
   var id = req.params.id;
   var legos = await LegoModel.findById(id);
   var robos = await roboModel.findById(id);
@@ -38,7 +38,7 @@ router.get('/detail/order/:id', async (req, res) => {
     res.status(404).send("Not found");
   } 
   var price = products.price;
-  var quantity = products.quantity;
+  var quantity = req.body.quantityInput;
   var total = quantity*price;
   res.render('order', { products: products, total: total});
 });
